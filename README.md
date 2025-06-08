@@ -32,7 +32,7 @@
 ## 📦 Setup
 
 ```bash
-git clone https://github.com/your-username/weather-widget.git
+git clone https://github.com/madii09/weather-widget.git
 cd weather-widget
 npm install
 ```
