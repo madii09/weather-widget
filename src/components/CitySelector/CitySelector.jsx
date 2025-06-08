@@ -1,16 +1,25 @@
-import { useContext, useMemo, useState } from 'react';
+import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ThemeContext } from '../../App';
 import { CITIES } from '../../utils';
+import { debounce } from '../../utils/debounce';
 
 export const CitySelector = ({ currentCity, onSelectCity }) => {
 	const { isDark } = useContext(ThemeContext);
 
 	const [query, setQuery] = useState('');
+	const [debouncedQuery, setDebouncedQuery] = useState('');
 	const [isOpen, setIsOpen] = useState(false);
 
-	const filteredCities = useMemo(() => {
-		return CITIES.filter(city => city.toLowerCase().includes(query.toLowerCase()));
+	// Debounce handler
+	const debouncedSetQuery = useRef(debounce(value => setDebouncedQuery(value), 300)).current;
+
+	useEffect(() => {
+		debouncedSetQuery(query);
 	}, [query]);
+
+	const filteredCities = useMemo(() => {
+		return CITIES.filter(city => city.toLowerCase().includes(debouncedQuery.toLowerCase()));
+	}, [debouncedQuery]);
 
 	return (
 		<div className='relative w-full max-w-xs sm:max-w-sm md:max-w-md mb-6 ml-auto'>
@@ -31,12 +40,12 @@ export const CitySelector = ({ currentCity, onSelectCity }) => {
 					className={`absolute z-10 w-full mt-2 rounded-lg shadow-lg border transition-colors
       ${isDark ? 'bg-[#343a40] text-[#f8f9fa] border-[#495057]' : 'bg-white text-[#212529] border-gray-300'}`}
 				>
-					<div className='flex justify-center px-3 py-2 rounded-t-lg'>
+					<div className='flex justify-center px-2 py-2 rounded-t-lg'>
 						<input
 							type='text'
 							value={query}
 							onChange={e => setQuery(e.target.value)}
-							className={`w-full max-w-xs text-sm sm:text-md outline-none rounded-lg
+							className={`w-full px-2 text-md sm:text-md outline-none rounded-md
           ${
 						isDark
 							? 'bg-[#212529] text-[#f8f9fa] placeholder-gray-400'

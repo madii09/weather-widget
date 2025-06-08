@@ -64,7 +64,11 @@ export const WeatherWidget = () => {
 						>
 							{getUnitLabel(unit)}
 						</button>
-						<button onClick={() => setIsSettingsOpen(true)} className='w-10 h-10' title='Settings'>
+						<button
+							onClick={() => setIsSettingsOpen(true)}
+							className={`${btnBase}  h-10 items-center`}
+							title='Settings'
+						>
 							⚙️
 						</button>
 					</div>

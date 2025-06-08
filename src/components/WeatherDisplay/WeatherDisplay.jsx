@@ -19,8 +19,6 @@ export const WeatherDisplay = ({ data, displayOptions }) => {
 			{displayOptions?.showDescription && (
 				<p className='py-4 capitalize text-xl'>{data.description}</p>
 			)}
-
-			{displayOptions?.showHumidity && <p className='text-md'>💧 Humidity: {data.humidity}%</p>}
 		</div>
 	);
 };

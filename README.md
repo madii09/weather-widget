@@ -19,6 +19,12 @@
 
 - 🎨 Responsive design with Tailwind CSS
 
+### 💡 Custom Features
+
+- 🔍 **Debounced Search Input** in CitySelector (300ms delay) for better performance on city
+  filtering
+- ⚙️ Theme and Unit toggles with persistent state
+
 ### 🔧 Tech Stack
 
 - React with Hooks and Context API
@@ -29,12 +35,15 @@
 
 - OpenWeatherMap API (free tier)
 
+- Vitest + React Testing Library for testing
+
 ## 📦 Setup
 
 ```bash
 git clone https://github.com/madii09/weather-widget.git
 cd weather-widget
 npm install
+npm run dev
 ```
 
 ## 🌐 API Key
