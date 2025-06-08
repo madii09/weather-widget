@@ -1,12 +1,50 @@
-# React + Vite
+# 🌤️ Weather Widget A sleek, customizable weather widget built with React + Vite, featuring real-time
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> weather data, forecast tabs, theming, and persistent user settings. Powered by the OpenWeatherMap
+> API.
 
-Currently, two official plugins are available:
+### 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌆 Select between 5 cities (London, New York, Tokyo, Sydney, Cairo)
 
-## Expanding the ESLint configuration
+- 🌡️ Toggle temperature units (°C / °F)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔄 Auto-refresh with configurable interval
+
+- 📅 View current weather and 6-day forecast
+
+- ⚙️ Settings panel with local persistence (unit lock, wind/description toggles)
+
+- 🌓 Light/Dark mode with theme switcher
+
+- 🎨 Responsive design with Tailwind CSS
+
+### 🔧 Tech Stack
+
+- React with Hooks and Context API
+
+- Vite for fast development
+
+- Tailwind CSS for styling
+
+- OpenWeatherMap API (free tier)
+
+## 📦 Setup
+
+```bash
+git clone https://github.com/your-username/weather-widget.git
+cd weather-widget
+npm install
+```
+
+## 🌐 API Key
+
+```
+VITE_WEATHER_API_KEY=your_api_key_here
+```
+
+## 🛠️ Run Locally
+
+```bash
+npm run dev
+```

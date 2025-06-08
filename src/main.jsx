@@ -1,11 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
-import { ThemeProvider } from './context/ThemeContext';
+import { createRoot } from 'react-dom/client';
+import { App, ThemeProvider } from './App';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+import './index.css';
+import { ErrorBoundary } from './components';
+
+createRoot(document.getElementById('root')).render(
+	<ErrorBoundary>
+		<ThemeProvider>
+			<App />
+		</ThemeProvider>
+	</ErrorBoundary>,
 );

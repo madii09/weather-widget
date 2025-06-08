@@ -1,0 +1,5 @@
+export const SET_AUTO_REFRESH_RATE = 'SET_AUTO_REFRESH_RATE';
+export const SET_UNIT_LOCKED = 'SET_UNIT_LOCKED';
+export const TOGGLE_WIND = 'TOGGLE_WIND';
+export const TOGGLE_DESCRIPTION = 'TOGGLE_DESCRIPTION';
+export const RESET = 'RESET';
